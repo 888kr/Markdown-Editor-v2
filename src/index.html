@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Markdown Editor</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <style>
+    body {
+      margin: 0;
+      background: #ddd;
+      display: flex;
+      justify-content: center;
+      font-family: sans-serif;
+      height: 100vh;
+      overflow-y: scroll;
+    }
+    #pages {
+      margin: 20px auto;
+    }
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      background: white;
+      margin: 10mm auto;
+      padding: 20mm;
+    }
+    .block {
+      outline: none;
+      padding: 2px 4px;
+      margin: 4px 0;
+      min-height: 1em;
+    }
+    .block.edit {
+      caret-color: transparent; /* hide default caret */
+    }
+    #custom-caret {
+      position: absolute;
+      width: 2px;
+      background: black;
+      pointer-events: none;
+      transition: top 0.1s ease-out, left 0.1s ease-out;
+    }
+  </style>
+</head>
+<body>
+  <div id="pages"></div>
+  <div id="custom-caret"></div>
+  <script src="https://cdn.jsdelivr.net/npm/markdown-it@14/dist/markdown-it.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/markdown-it-katex@3/dist/markdown-it-katex.min.js"></script>
+  <script src="renderer.js"></script>
+</body>
+</html>
